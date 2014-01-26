@@ -1,5 +1,6 @@
 # Introduction
-Utility class for pretty printing table data. This class supports printing via annotations.
+Utility class for pretty printing table data. Annotated printing and printing column data spanning multi row is supported.
+For simple usage refer to examples below or check code on how to achieve your format.
 
 # How to use
 Straightforward to use. You can initialize the printer yourself or use the builder. Default PrintStream is the
@@ -19,7 +20,7 @@ PrettyTablePrinter builder = new PrettyTablePrinter.PrettyTablePrinterBuilder()
 
 # Examples
 
-## Default output
+### Default output
 
 ```java
 String[] headers = {"A", "B", "C", "D"};
@@ -44,7 +45,7 @@ default alignment is left. Alignment can be changed to right or center by settin
 
 Example of output with center and right is below.
 
-## center aligned
+### Center aligned
 ```
 +------------+------------+------------+------------+
 |     A      |     B      |     C      |     D      |
@@ -55,7 +56,7 @@ Example of output with center and right is below.
 +------------+------------+------------+------------+
 ```
 
-## right aligned
+### Right aligned
 ```
 +------------+------------+------------+------------+
 |         A  |         B  |         C  |         D  |
@@ -66,7 +67,7 @@ Example of output with center and right is below.
 +------------+------------+------------+------------+
 ```
 
-## Multi row spanning column
+### Multi row spanning column
 ```
 +------------+--------------------+------------+------------+
 |     A      |         B          |     C      |     D      |
@@ -79,7 +80,7 @@ Example of output with center and right is below.
 +------------+--------------------+------------+------------+
 ```
 
-## Printing annotated objects
+### Printing annotated objects
 
 Suppose we have a following class definition
 ```java
@@ -123,6 +124,10 @@ Output:
 |     R2     |     2      |
 +------------+------------+
 ```
+
+* since "title" field annotation does not define header value, field name "title" is used in the header
+* count field annotation defines header as "view", therefore it is included as the header
+* non-annotated field "name" is ignored
 
 #### Notes:
 * Only annotated fields will be printed
