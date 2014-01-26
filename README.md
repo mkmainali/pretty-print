@@ -29,7 +29,7 @@ PrettyTablePrinter printer = new PrettyTablePrinter();
 printer.print(headers, data);
 ```
 
-output:
+would print data as follows:
 ```
 +------------+------------+------------+------------+
 |  A         |  B         |  C         |  D         |
@@ -39,6 +39,10 @@ output:
 |  A3        |  B3        |  C3        |  D3        |
 +------------+------------+------------+------------+
 ```
+
+default alignment is left. Alignment can be changed to right or center by setting the alignment.
+
+Example of output with center and right is below.
 
 ## center aligned
 ```
@@ -121,13 +125,13 @@ Output:
 ```
 
 #### Notes:
-..* Only annotated fields will be printed
-..* Defined header value will be used as header if available. If header value is not defined, then the field name will be used as the header.
-..* null value will be printed as empty string
-..* If the field is object, it should have a proper toString(), otherwise you will be seeing hash code printed
+* Only annotated fields will be printed
+* Defined header value will be used as header if available. If header value is not defined, then the field name will be used as the header.
+* null value will be printed as empty string
+* If the field is object, it should have a proper toString(), otherwise you will be seeing hash code printed
 
 # Limitations
-..* Printing column value spanning multiple row is supported. However, it does not do any smart way of dividing data into multiple rows. (maybe in future)
-..* Does not support vertical alignment
+* Printing column value spanning multiple row is supported. However, it does not do any smart way of dividing data into multiple rows. (maybe in future)
+* Does not support vertical alignment
 
 
