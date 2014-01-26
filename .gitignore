@@ -217,3 +217,4 @@ pip-log.txt
 # intellij
 .idea
 *.iml
+*.class

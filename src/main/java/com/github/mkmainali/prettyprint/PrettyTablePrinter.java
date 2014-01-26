@@ -4,7 +4,8 @@ import org.apache.commons.lang.StringUtils;
 
 import java.io.PrintStream;
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Class for pretty printing a table data.
